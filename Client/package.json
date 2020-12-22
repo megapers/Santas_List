@@ -1,0 +1,34 @@
+{
+    "name": "comp3073-assign2-timmakimov-a00903109",
+    "version": "1.0.0",
+    "license": "MIT",
+    "scripts": {
+        "start": "webpack-dev-server --open",
+        "build": "webpack --mode production"
+    },
+    "dependencies": {
+        "formik": "^1.5.8",
+        "google-maps-react": "^2.0.6",
+        "history": "^4.10.1",
+        "material-ui": "^0.20.2",
+        "react": "^16.14.0",
+        "react-dom": "^16.14.0",
+        "react-router-dom": "^5.2.0",
+        "rxjs": "^6.6.3",
+        "yup": "^0.27.0"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.12.10",
+        "@babel/plugin-proposal-class-properties": "^7.12.1",
+        "@babel/preset-env": "^7.12.11",
+        "@babel/preset-react": "^7.12.10",
+        "babel-loader": "^8.2.2",
+        "css-loader": "^3.6.0",
+        "html-webpack-plugin": "^3.2.0",
+        "path": "^0.12.7",
+        "style-loader": "^1.3.0",
+        "webpack": "^4.44.2",
+        "webpack-cli": "^3.3.12",
+        "webpack-dev-server": "^3.11.0"
+    }
+}
