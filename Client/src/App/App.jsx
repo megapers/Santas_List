@@ -9,6 +9,9 @@ import { KidsPage } from '@/KidsPage';
 import { LoginPage } from '@/LoginPage';
 import { RegisterPage } from '@/RegisterPage';
 import { EditUserPage } from '@/EditUserPage';
+import tree from './christmas-tree-icon.png'
+import santa from './santa.png'
+
 
 class App extends React.Component {
     constructor(props) {
@@ -35,11 +38,25 @@ class App extends React.Component {
                 <Router history={history}>
                     <div>
                         {currentUser &&
-                            <nav className="navbar navbar-expand navbar-dark bg-dark">
-                                <div className="navbar-nav">
-                                    <Link to="/" className="nav-item nav-link">Home</Link>
-                                    <Link to="/Kids" className="nav-item nav-link">Kids</Link>
-                                    <a onClick={this.logout} className="nav-item nav-link">Logout</a>
+                            <nav className="navbar navbar-expand-lg navbar-dark bg-dark col-md-12">
+                                <a className="navbar-brand " href="#">
+                                    <img src={santa} width="10%" height="10%" alt=""/>
+                                </a>
+                                <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                                    <span className="navbar-toggler-icon"></span>
+                                </button>
+                                <div className="collapse navbar-collapse" id="navbarNav">
+                                    <ul className="navbar-nav offset-md-9">
+                                        <li className="nav-item">
+                                            <Link to="/" className="nav-item nav-link">Home</Link>
+                                        </li>
+                                        <li className="nav-item">
+                                            <Link to="/Kids" className="nav-item nav-link">Kids</Link>
+                                        </li>
+                                        <li className="nav-item">
+                                            <a onClick={this.logout} className="nav-item nav-link">Logout</a>
+                                        </li>
+                                    </ul>
                                 </div>
                             </nav>
                         }
@@ -65,10 +82,22 @@ class App extends React.Component {
                 <Router history={history}>
                     <div>
                         {currentUser &&
-                            <nav className="navbar navbar-expand navbar-dark bg-dark">
-                                <div className="navbar-nav">
-                                    <Link to="/" className="nav-item nav-link">Home</Link>
-                                    <a onClick={this.logout} className="nav-item nav-link">Logout</a>
+                            <nav className="navbar navbar-expand-lg navbar-dark bg-dark col-md-12">
+                                <a className="navbar-brand" href="#">
+                                    <img src={tree} width="10%" height="10%" alt=""/>
+                                </a>
+                                <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                                    <span className="navbar-toggler-icon"></span>
+                                </button>
+                                <div className="collapse navbar-collapse" id="navbarNav">
+                                    <ul className="navbar-nav offset-md-9">
+                                        <li className="nav-item">
+                                            <Link to="/" className="nav-item nav-link">Home</Link>
+                                        </li>
+                                        <li className="nav-item">
+                                            <a onClick={this.logout} className="nav-item nav-link">Logout</a>
+                                        </li>
+                                    </ul>
                                 </div>
                             </nav>
                         }
