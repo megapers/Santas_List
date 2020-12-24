@@ -61,7 +61,7 @@ class LoginPage extends React.Component {
                             {status &&
                                 <div className={'alert alert-danger'}>{status}</div>
                             }
-                         <Link to="/register" className="nav-link">Register</Link>
+                            <Link to="/register" className="nav-link">Register</Link>
                         </Form>
                     )}
                 />
