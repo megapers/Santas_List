@@ -20,7 +20,7 @@ class HomePage extends React.Component {
         const { currentUser, users } = this.state;
         return (
             <div>
-                <h3>Hi {currentUser.firstName}!</h3>
+                <h3>Hi {currentUser.username}!</h3>
                 <p>You're logged in with .Net Core, React & JWT!!</p>
             </div>
         );

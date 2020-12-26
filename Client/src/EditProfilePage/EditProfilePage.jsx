@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { Component } from 'react';
 import {userService, authenticationService} from '@/_services';
 import { ValidatorForm, TextValidator } from 'react-material-ui-form-validator';
-import {Button, Checkbox} from '@material-ui/core';
+import Button from '@material-ui/core/Button';
 import Moment from 'moment';
 
-class EditUserPage extends React.Component {
+class EditProfilePage extends React.Component {
   constructor(props){
     super(props);
     
@@ -24,24 +24,23 @@ class EditUserPage extends React.Component {
         role: '',
         street: '',
         username: ''
-      }
+      },
+      
     };
     this.user = authenticationService.currentUserValue;
   }
-
+  
   componentDidMount() {
-    this._loadUserData(this.props.location.state);
+    this._loadUserData(this.user.id);
  }
 
  _loadUserData(id) {
    // fetch data and update state
    userService.getUserById(id)
    .then(json => this.setState({ formData: json }));
-   //then(() => console.log(Moment(this.state.formData.birthDate).format('DD-MM-YYYY')));
   }
 
-
-  handleChange = (event, newVal) => {
+  handleChange = (event) => {
     const { formData } = this.state;
     formData[event.target.name] = event.target.value;
     this.setState({ formData });
@@ -58,25 +57,26 @@ class EditUserPage extends React.Component {
   }
 
   handleSubmit = () => {
+    //console.log(this.state.formData);
     const data = this.state.formData;
     data.latitude = parseFloat(data.latitude);
     data.longitude = parseFloat(data.longitude);
-    userService.updateUser(data)
+    userService.updateProfile(data)
       .catch(function (error) {
         alert(error);
       });
     alert("Profile with id " + this.state.formData.id + " is updated!");
+    localStorage.setItem('currentUser', JSON.stringify(this.state.formData));
   }
 
   renderData(formData){
-    console.log(formData);
     return (
       <ValidatorForm
         ref="form"
         onSubmit={this.handleSubmit}
         onError={errors => console.log('Error:' + errors)}
         className = "col-md-12 offset-md-3">
-        <h2>Edit User</h2>
+        <h2>Profile</h2>
         <br/>
         <TextValidator
           label="First Name"
@@ -185,19 +185,6 @@ class EditUserPage extends React.Component {
           type="number"
           variant ="outlined"
         />
-        <br/>
-        <Checkbox
-          checked={formData.isNaughty}
-          onChange = {(event,newValue) => this.setState(prevState => ({
-            formData: {                  
-                ...prevState.formData,    
-                isNaughty: newValue         
-                  }
-                }
-              )
-            )
-          }
-        />
         <br/> 
         <Button
           color="primary"
@@ -215,4 +202,4 @@ class EditUserPage extends React.Component {
 const style = {
   margin: 15,
 };
-export {EditUserPage};
+export {EditProfilePage};

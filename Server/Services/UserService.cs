@@ -128,22 +128,22 @@ namespace Assign2.Services
             if (userParam.BirthDate != null)
                 user.BirthDate = userParam.BirthDate;
 
-            if (!string.IsNullOrWhiteSpace(userParam.Street))
-                user.Street = userParam.Street;
+            if (!(userParam.Street is null))
+                user.Street = userParam.Street.Trim();
 
-            if (!string.IsNullOrWhiteSpace(userParam.City))
-                user.City = userParam.City;
+            if (!(userParam.City is null))
+                user.City = userParam.City.Trim();
 
-            if (!string.IsNullOrWhiteSpace(userParam.Province))
-                user.Province = userParam.Province;
+            if (!(userParam.Province is null))
+                user.Province = userParam.Province.Trim();
 
-            if (!string.IsNullOrWhiteSpace(userParam.PostalCode))
-                user.PostalCode = userParam.PostalCode;
+            if (!(userParam.PostalCode is null))
+                user.PostalCode = userParam.PostalCode.Trim();
 
-            if (userParam.Latitude != 0)
+            //if (userParam.Latitude != 0)
                 user.Latitude = userParam.Latitude;
 
-            if (userParam.Longitude != 0)
+            //if (userParam.Longitude != 0)
                 user.Longitude = userParam.Longitude;
 
             if (userParam.IsNaughty != user.IsNaughty)

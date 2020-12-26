@@ -33,6 +33,9 @@ class RegisterPage extends Component {
 
   handleSubmit = () => {
     const kid = this.state.formData;
+    kid.Latitude = parseFloat(kid.Latitude);
+    kid.Longitude = parseFloat(kid.Longitude);
+
     authenticationService.register(kid)
       .then(
           user => {
@@ -64,7 +67,7 @@ class RegisterPage extends Component {
         ref="form"
         onSubmit={this.handleSubmit}
         //onError={errors => console.log(errors)}
-      >
+        className = "col-md-12 offset-md-3">
         <h1>Register</h1>
         <TextValidator
           label="First Name"
