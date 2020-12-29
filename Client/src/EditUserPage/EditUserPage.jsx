@@ -1,8 +1,9 @@
 import React from 'react';
 import {userService, authenticationService} from '@/_services';
 import { ValidatorForm, TextValidator } from 'react-material-ui-form-validator';
-import {Button, Checkbox} from '@material-ui/core';
+import {Button, Checkbox, FormControlLabel,} from '@material-ui/core';
 import Moment from 'moment';
+import DeleteDialog from './DeleteDialog'
 
 class EditUserPage extends React.Component {
   constructor(props){
@@ -24,7 +25,8 @@ class EditUserPage extends React.Component {
         role: '',
         street: '',
         username: ''
-      }
+      },
+      showDialog : false
     };
     this.user = authenticationService.currentUserValue;
   }
@@ -69,7 +71,6 @@ class EditUserPage extends React.Component {
   }
 
   renderData(formData){
-    console.log(formData);
     return (
       <ValidatorForm
         ref="form"
@@ -186,28 +187,36 @@ class EditUserPage extends React.Component {
           variant ="outlined"
         />
         <br/>
-        <Checkbox
-          checked={formData.isNaughty}
-          onChange = {(event,newValue) => this.setState(prevState => ({
-            formData: {                  
-                ...prevState.formData,    
-                isNaughty: newValue         
+        <FormControlLabel
+          control={
+          <Checkbox
+            checked={formData.isNaughty}
+            onChange = {(event,newValue) => this.setState(prevState => ({
+              formData: {                  
+                  ...prevState.formData,    
+                  isNaughty: newValue         
+                    }
                   }
-                }
+                )
               )
-            )
-          }
-        />
+            }
+          />
+        }
+        label="Is naughty?"
+      />
         <br/> 
         <Button
           color="primary"
           variant="contained"
           type="submit"
-          //disabled={submitted}
         >
           Submit
         </Button>
+        <br/> 
+        <br/> 
+        <DeleteDialog userData = {formData}/> 
       </ValidatorForm>
+      
     );
   }
 }
