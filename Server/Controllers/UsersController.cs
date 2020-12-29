@@ -136,8 +136,9 @@ namespace Assign2.Controllers
         }
 
         [Authorize(Roles = Role.Admin)]
+        [Route("deleteuser/{id}")]
         [HttpDelete("{id}")]
-        public IActionResult Delete(int id)
+        public IActionResult DeleteUser(int id)
         {
             _userService.Delete(id);
             return Ok();
