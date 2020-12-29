@@ -3,7 +3,7 @@ import {userService, authenticationService} from '@/_services';
 import { ValidatorForm, TextValidator } from 'react-material-ui-form-validator';
 import {Button, Checkbox, FormControlLabel,} from '@material-ui/core';
 import Moment from 'moment';
-import DeleteDialog from './DeleteDialog'
+import DeleteDialog from '../_services/DeleteDialog'
 
 class EditUserPage extends React.Component {
   constructor(props){
@@ -214,7 +214,7 @@ class EditUserPage extends React.Component {
         </Button>
         <br/> 
         <br/> 
-        <DeleteDialog userData = {formData}/> 
+        <DeleteDialog userData = {formData} buttonText = {"Delete user"} buttonSize = {"medium"}/> 
       </ValidatorForm>
       
     );

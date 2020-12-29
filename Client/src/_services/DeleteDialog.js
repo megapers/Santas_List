@@ -28,17 +28,31 @@ export default function DeleteDialog(props) {
       });
       handleClose();
       history.push('/Kids');
+      
+      //Remove a record from Kids table on /kids page
+      if(typeof props.kidIndex !== 'undefined'){
+        removePeople(props.kids);
+        props.onChangeValue(props.kids);
+      }
+      
   }
-
+  //Remove a record from Kids table on /kids page
+  const removePeople = (arr) => {
+    var index = props.kidIndex;
+    if (index !== -1) {
+      arr.splice(index, 1);
+    }
+  }
 
   return (
     <div>
       <Button 
           variant="contained" 
           color="secondary"
+          size={props.buttonSize}
           onClick={handleClickOpen}
         >
-        Delete user
+        {props.buttonText}
         <DeleteIcon  />
       </Button>
       
@@ -51,13 +65,13 @@ export default function DeleteDialog(props) {
         <DialogTitle id="alert-dialog-title">{"Are you sure you want to permanently delete this account?"}</DialogTitle>
         <DialogContent>
           <DialogContentText id="alert-dialog-description">
-              <strong>First name:</strong> {props.userData.firstName}
+            <strong>First name:</strong> {props.userData.firstName}
           </DialogContentText>
           <DialogContentText id="alert-dialog-description">
-          <strong>Last name:</strong> {props.userData.lastName}
+            <strong>Last name:</strong> {props.userData.lastName}
           </DialogContentText>
           <DialogContentText id="alert-dialog-description">
-          <strong>Id:</strong> {props.userData.id}
+            <strong>Id:</strong> {props.userData.id}
           </DialogContentText>
         </DialogContent>
         <DialogActions>
