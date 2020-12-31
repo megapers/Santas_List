@@ -1,6 +1,6 @@
 {
-  "homepage": "https://github.com/megapers/Santas_List#readme",
-  "name": "santas-list-demo-app-tim-makimov",
+  "homepage": "https://santas-list.vercel.app/",
+  "name": "santas-list",
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {

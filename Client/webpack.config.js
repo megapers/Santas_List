@@ -29,6 +29,7 @@ module.exports = {
     },
     resolve: {
         extensions: ['.js', '.jsx'],
+        mainFields: ['browser', 'main', 'module'],
         alias: {
             '@': path.resolve(__dirname, 'src/'),
         }
