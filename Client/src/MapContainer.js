@@ -12,18 +12,31 @@ export class MapContainer extends Component {
     data: {},
     showingInfoWindow: false,  //Hides or the shows the infoWindow
     activeMarker: {},          //Shows the active marker upon click
-    selectedPlace: {}          //Shows the infoWindow to the selected place upon a marker
+    selectedPlace: {},          //Shows the infoWindow to the selected place upon a marker
   };
   
+
+
   componentDidMount() {
     this.setState({data: this.props})
   }
   
+  componentWillReceiveProps(nextProps) {
+    this.setState(
+      { data: nextProps},
+      function() {
+          //console.log( 'this.state ::: ' + JSON.stringify( this.state.data ) );
+          this.setState({data: nextProps});
+      }
+    );
+
+  }
+
   render() {
     const dt = this.state.data
     if(!isEmpty(dt)){
-      console.log(dt);
-      return(this.renderMap())
+      //console.log(dt);
+      return(this.renderMap(dt))
     }
     else{
       return (
@@ -32,30 +45,30 @@ export class MapContainer extends Component {
     }
   }
 
-  renderMap() {
+  renderMap(dt) {
     return (
       <Map
         google={this.props.google}
         zoom={14}
         style={mapStyles}
         initialCenter={{
-        lat: this.state.data.lat,
-        lng: this.state.data.long
+        lat: dt.lat,
+        lng: dt.long
         }}>
           <Marker
-          onClick={this.onMarkerClick}
-          name={this.state.data.markerName}
-        />
-        <InfoWindow
-          marker={this.state.activeMarker}
-          visible={this.state.showingInfoWindow}
-          onClose={this.onClose}
-        >
-          <div>
-            <h4>{this.state.selectedPlace.name}</h4>
-          </div>
-        </InfoWindow>
-        </Map>
+            onClick={this.onMarkerClick}
+            name={this.state.data.markerName}
+          />
+          <InfoWindow
+            marker={this.state.activeMarker}
+            visible={this.state.showingInfoWindow}
+            onClose={this.onClose}
+          >
+            <div>
+              <h4>{this.state.selectedPlace.name}</h4>
+            </div>
+          </InfoWindow>
+      </Map>
     );
   }
 
@@ -77,7 +90,7 @@ export class MapContainer extends Component {
 
 }
 export default GoogleApiWrapper({
-  apiKey: 'AIzaSyBG2qxgYYO6oJFWDoPPThz4CJk0UJ5xY9k'
+  apiKey: 'AIzaSyD_dzFHAYG2IqciMt0BkIGXzTJbb9IJtCQ'
 })(MapContainer);
 
 // Speed up calls to hasOwnProperty

@@ -6,22 +6,22 @@ const mapStyles = {
   height: '100%'
 };
 
-export class MapContainer extends Component {
-  render() {
+function MapContainer(props) {
     return (
       <Map
-        google={this.props.google}
+        google={props.google}
         zoom={14}
         style={mapStyles}
         initialCenter={{
-         lat: -1.2884,
-         lng: 36.8233
+         lat: props.lat,
+         lng: props.long
         }}
-      />
+      >
+        <Marker/>
+      </Map>
     );
   }
-}
 
 export default GoogleApiWrapper({
-  apiKey: 'AIzaSyBz1rMRUObzcy1ZPbnmIhSsi9J22wsrxpU'
+  apiKey: 'AIzaSyD_dzFHAYG2IqciMt0BkIGXzTJbb9IJtCQ'
 })(MapContainer);

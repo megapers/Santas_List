@@ -47,7 +47,7 @@ class App extends React.Component {
                                     <span className="navbar-toggler-icon"></span>
                                 </button>
                                 <div className="collapse navbar-collapse" id="navbarNav">
-                                    <ul className="navbar-nav offset-md-8">
+                                    <ul className="navbar-nav offset-md-9">
                                         <li className="nav-item">
                                             <Link to="/" className="nav-item nav-link">Home</Link>
                                         </li>
@@ -67,7 +67,7 @@ class App extends React.Component {
                         <div className="jumbotron">
                             <div className="container">
                                 <div className="row">
-                                    <div className="col-md-6 offset-md-3">
+                                    <div className="col-md-12">
                                         <PrivateRoute exact path="/" component={HomePage} />
                                         <PrivateRoute exact path="/Kids" component={KidsPage} />
                                         <Route path="/login" component={LoginPage} />
@@ -112,7 +112,7 @@ class App extends React.Component {
                         <div className="jumbotron">
                             <div className="container">
                                 <div className="row">
-                                    <div className="col-md-6 offset-md-3">
+                                    <div className="col-md-12">
                                         <PrivateRoute exact path="/" component={HomePage} />
                                         <Route path="/login" component={LoginPage} />
                                         <Route path="/register" component={RegisterPage} />
