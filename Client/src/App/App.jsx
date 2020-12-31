@@ -47,7 +47,7 @@ class App extends React.Component {
                                     <span className="navbar-toggler-icon"></span>
                                 </button>
                                 <div className="collapse navbar-collapse" id="navbarNav">
-                                    <ul className="navbar-nav offset-md-9">
+                                    <ul className="navbar-nav offset-md-8">
                                         <li className="nav-item">
                                             <Link to="/" className="nav-item nav-link">Home</Link>
                                         </li>

@@ -29,7 +29,6 @@ function login(username, password) {
 }
 
 function register(kid) {
-    console.log(JSON.stringify(kid));
     const requestOptions = {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
