@@ -42,8 +42,9 @@ module.exports = {
     externals: {
         // global app config object
         config: JSON.stringify({
-            apiUrl: 'https://localhost:5001'
+            //apiUrl: 'https://localhost:5001'
             //apiUrl: 'https://localhost:44313'
+            apiUrl: 'http://listofsanta.azurewebsites.net'
         })
     }
 }

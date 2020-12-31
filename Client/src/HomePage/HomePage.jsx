@@ -39,13 +39,16 @@ class HomePage extends React.Component {
                             <li><u>.Net Core 3.1</u></li>
                             <li><u>Entity Framework</u></li>
                             <li><u>SQL Lite</u> (to save on DB hosting)</li>
-                            <li><u>JWT:</u>Authentication and Authorization</li>
+                            <li><u>JWT:</u> Authentication and Authorization</li>
                         </ul>
                     </div>
                     <div className = "col-md-3 offset-md-1">
                         <p><b>Hosting</b></p>
                         <ul>
-                            <li><u>Microsoft Azure</u></li>
+                            <li><u>Front end:</u> Vercel</li>
+                            <li><u>Back end:</u> Microsoft Azure</li>
+                            <p>API: <a href="#" 
+                                            target="_blank" rel="noopener noreferrer">http://listofsanta.azurewebsites.net</a></p>
                         </ul>
                     </div>
                 </div>
