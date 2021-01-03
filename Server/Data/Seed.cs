@@ -1,8 +1,8 @@
-using Assign2.Entities;
+using Santa.Entities;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 
-namespace Assig2.Data
+namespace Auth.Data
 {
     public static class SeedData
     {

@@ -1,4 +1,4 @@
-namespace Assign2.Entities
+namespace Santa.Entities
 {
     public static class Role
     {

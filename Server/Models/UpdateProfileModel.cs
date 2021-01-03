@@ -1,6 +1,6 @@
 using System;
 
-namespace Assign2.Models
+namespace Santa.Models
 {
     public class UpdateProfileModel
     {

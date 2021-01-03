@@ -1,6 +1,6 @@
 using System;
 
-namespace Assign2.Entities
+namespace Santa.Entities
 {
     public class User
     {

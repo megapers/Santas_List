@@ -1,4 +1,4 @@
-namespace Assign2.Helpers
+namespace Santa.Helpers
 {
     public class AppSettings
     {

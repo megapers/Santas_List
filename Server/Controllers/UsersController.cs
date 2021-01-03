@@ -4,13 +4,13 @@ using AutoMapper;
 using Microsoft.Extensions.Options;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Cors;
-using Assign2.Services;
-using Assig2.Models;
-using Assign2.Models;
-using Assign2.Helpers;
-using Assign2.Entities;
+using Santa.Services;
+using Auth.Models;
+using Santa.Models;
+using Santa.Helpers;
+using Santa.Entities;
 
-namespace Assign2.Controllers
+namespace Santa.Controllers
 {
     [Authorize]
     [Route("api/[controller]")]
@@ -33,7 +33,8 @@ namespace Assign2.Controllers
         }
         
         [AllowAnonymous]
-        [HttpPost("authenticate")]
+        [Route("authenticate")]
+        [HttpPost]
         public IActionResult Authenticate([FromBody]AuthenticateModel model)
         {
             var user = _userService.Authenticate(model.Username, model.Password);
@@ -45,7 +46,8 @@ namespace Assign2.Controllers
         }
 
         [AllowAnonymous]
-        [HttpPost("register")]
+        [Route("register")]
+        [HttpPost]
         public IActionResult Register([FromBody]RegisterModel model)
         {
             // map model to entity
@@ -63,9 +65,10 @@ namespace Assign2.Controllers
                 return BadRequest(new { message = ex.Message });
             }
         }
-        
+
+        [Route("getall")]
         [Authorize(Roles = Role.Admin)]
-        [HttpGet("getall")]
+        [HttpGet]
         public IActionResult GetAll()
         {
             var users = _userService.GetAll();
@@ -113,8 +116,8 @@ namespace Assign2.Controllers
             }
         }
 
-        [Authorize(Roles = Role.Admin)]
         [Route("updateuser/{id}")]
+        [Authorize(Roles = Role.Admin)]
         [HttpPut]
         public IActionResult UpdateUser(int id, [FromBody]UpdateUserModel model)
         {
@@ -135,9 +138,9 @@ namespace Assign2.Controllers
             }
         }
 
-        [Authorize(Roles = Role.Admin)]
         [Route("deleteuser/{id}")]
-        [HttpDelete("{id}")]
+        [Authorize(Roles = Role.Admin)]
+        [HttpDelete]
         public IActionResult DeleteUser(int id)
         {
             _userService.Delete(id);

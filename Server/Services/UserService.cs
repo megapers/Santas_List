@@ -4,13 +4,13 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Security.Claims;
 using System.Text;
-using Assign2.Data;
-using Assign2.Entities;
-using Assign2.Helpers;
+using Santa.Data;
+using Santa.Entities;
+using Santa.Helpers;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 
-namespace Assign2.Services
+namespace Santa.Services
 {
     public interface IUserService
     {

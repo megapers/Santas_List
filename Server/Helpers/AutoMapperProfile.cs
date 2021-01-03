@@ -1,8 +1,8 @@
 using AutoMapper;
-using Assign2.Entities;
-using Assign2.Models;
+using Santa.Entities;
+using Santa.Models;
 
-namespace Assign2.Helpers
+namespace Santa.Helpers
 {
     public class AutoMapperProfile : Profile
     {

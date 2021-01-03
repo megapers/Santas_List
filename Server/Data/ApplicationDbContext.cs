@@ -1,7 +1,7 @@
-using Assign2.Entities;
+using Santa.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace Assign2.Data
+namespace Santa.Data
 {
 
     public class ApplicationDbContext:DbContext

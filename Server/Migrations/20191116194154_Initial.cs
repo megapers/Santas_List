@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace Assign2.Migrations
+namespace Santa.Migrations
 {
     public partial class Initial : Migration
     {

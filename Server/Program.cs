@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 using WebApi;
 
-namespace Assign2
+namespace Santa
 {
     public class Program
     {

@@ -1,8 +1,8 @@
 using System.Collections.Generic;
 using System.Linq;
-using Assign2.Entities;
+using Santa.Entities;
 
-namespace Assign2.Helpers
+namespace Santa.Helpers
 {
     public static class ExtensionMethods
     {
