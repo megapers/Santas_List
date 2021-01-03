@@ -1,13 +1,13 @@
 {
-  "homepage": "https://santas-list.vercel.app/",
+  "homepage": "http://megapers.github.io/Santas_List",
   "name": "santas-list",
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
     "start": "webpack-dev-server --open",
     "build": "webpack --mode production",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@iconify/icons-mdi": "^1.1.2",
