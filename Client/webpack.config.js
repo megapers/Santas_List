@@ -56,7 +56,7 @@ module.exports = {
         config: JSON.stringify({
             //apiUrl: 'https://localhost:5001'
             //apiUrl: 'https://localhost:44313'
-            apiUrl: 'http://listofsanta.azurewebsites.net'
+            apiUrl: 'https://listofsanta.azurewebsites.net'
         })
     }
 }
