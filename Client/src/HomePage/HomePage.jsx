@@ -47,8 +47,8 @@ class HomePage extends React.Component {
                         <ul>
                             <li><u>Front end:</u> Vercel</li>
                             <li><u>Back end:</u> Microsoft Azure</li>
-                            <p>API: <a href="#" 
-                                            target="_blank" rel="noopener noreferrer">http://listofsanta.azurewebsites.net</a></p>
+                            <p>API: <a href="https://listofsanta.azurewebsites.net/swagger" 
+                                            target="_blank" rel="noopener noreferrer">Swagger</a></p>
                         </ul>
                     </div>
                 </div>
