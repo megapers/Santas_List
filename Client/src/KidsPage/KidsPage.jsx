@@ -74,22 +74,25 @@ class KidsPage extends React.Component {
     
    render() {
       return (
-         <div>
-            <h3 id='title'>List of kids</h3>
-            <table id='kids'>
-               <tbody>
-               <tr>
-                  <th>Id</th>
-                  <th>UserName</th>
-                  <th>FirstName</th>
-                  <th>LastName</th>
-                  <th>Is naughty?</th>
-                  <th>Remove kid?</th>
-               </tr>
-                  {this.renderTableData()}
-               </tbody>
-            </table>
-      </div>
+         <div className="row">
+            <div className="col">
+               <h3 id='title'>List of kids</h3>
+               <table id='kids'>
+                  <tbody>
+                  <tr>
+                     <th>Id</th>
+                     <th>UserName</th>
+                     <th>FirstName</th>
+                     <th>LastName</th>
+                     <th>Is naughty?</th>
+                     <th>Remove kid?</th>
+                  </tr>
+                     {this.renderTableData()}
+                  </tbody>
+               </table>
+            </div>
+         </div>
+
       );
    }
 }

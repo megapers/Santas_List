@@ -72,7 +72,7 @@ class EditProfilePage extends React.Component {
 
   renderData(formData){
     return (
-      <div className="container">
+     
         <div className="row">
           <div className="col-md-3">
             <ValidatorForm
@@ -200,11 +200,11 @@ class EditProfilePage extends React.Component {
               </Button>
             </ValidatorForm>
           </div>
-          <div className="col-md-9">
+          <div className="col-md-8">
             <MapContainer key = {formData.latitude, formData.longitude} lat = {formData.latitude} long = {formData.longitude}/>
           </div>
         </div>
-      </div>
+     
     );
   }
 }
