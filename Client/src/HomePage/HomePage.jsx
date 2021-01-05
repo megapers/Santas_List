@@ -20,12 +20,12 @@ class HomePage extends React.Component {
         const { currentUser, users } = this.state;
         return (
             <div className="container">
-            <h3>Hi {currentUser.username}!</h3>
-            <p>This website is build with the next stack:</p>
-            <br/>
+                <h3>Hi {currentUser.username}!</h3>
+                <p>This website is build with the next stack:</p>
+                <br/>
 
-                <div className="row col-md-12">
-                    <div className = "col-md-3 offset-md-1">
+                <div className="row">
+                    <div className = "col">
                         <p><b>Front end</b></p>
                         <ul>
                             <li><u>React</u> (with classes, Redux and hooks will be my next app)</li>
@@ -33,7 +33,7 @@ class HomePage extends React.Component {
                             <li>Google maps API</li>
                         </ul>
                     </div>
-                    <div className = "col-md-3 offset-md-1">
+                    <div className = "col">
                         <p><b>Back end</b></p>
                         <ul>
                             <li><u>.Net Core 3.1</u></li>
@@ -42,7 +42,7 @@ class HomePage extends React.Component {
                             <li><u>JWT:</u> Authentication and Authorization</li>
                         </ul>
                     </div>
-                    <div className = "col-md-3 offset-md-1">
+                    <div className = "col">
                         <p><b>Hosting</b></p>
                         <ul>
                             <li><u>Front end:</u> Vercel</li>

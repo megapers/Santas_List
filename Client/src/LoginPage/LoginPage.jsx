@@ -16,8 +16,8 @@ class LoginPage extends React.Component {
     render() {
         return (
             <div className="container">
-                <div className="row col-md-12">
-                    <div className = "col-md-3">
+                <div className="row">
+                    <div className = "col-6 col-md-4">
                         <h2>Login</h2>
                         <Formik
                             initialValues={{
@@ -68,21 +68,21 @@ class LoginPage extends React.Component {
                             )}
                         />
                     </div>
-                    <div className = "col-md-8 offset-md-1">
+                    <div className = "col">
                         <p>This mini-app is done by <strong>Timur Makimov</strong></p>
                         <p>This full-stack application demonstrates authentication and authorization with JWT</p>
                         <p>To see how authorization is working in this app and to get information about technical implementation, 
                             please login with the following credentials:</p>
                         
-                        <div className="row col-xs-12 offset-md-1">
-                            <div className = "col-xs-6">
+                        <div className="row">
+                            <div className = "col">
                                 <b>Admin</b>
                                 <br/>
                                 <p><i>Username:</i> santa</p>
                                 <p><i>Password:</i> P@$$w0rd</p>
 
                             </div>
-                            <div className = "col-xs-6 offset-md-3">
+                            <div className = "col">
                                 <b>User</b>
                                 <br/>
                                 <p><i>Username:</i> tim</p>

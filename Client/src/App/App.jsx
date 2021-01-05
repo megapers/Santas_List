@@ -39,15 +39,15 @@ class App extends React.Component {
                 <Router history={history}>
                     <div>
                         {currentUser &&
-                            <nav className="navbar navbar-expand-lg navbar-dark bg-dark col-md-12">
-                                <a className="navbar-brand " href="/editProfile">
-                                    <img src={santa} width="10%" height="10%" alt=""/>
-                                </a>
-                                <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                                    <span className="navbar-toggler-icon"></span>
+                            <nav className="navbar navbar-expand-lg navbar-dark bg-dark ">
+                                <img src={santa} width="5%" height="5%" alt=""/>
+                                <button className="navbar-toggler" type="button" data-toggle="collapse" 
+                                    data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" 
+                                    aria-label="Toggle navigation">
+                                    <span className="navbar-toggler-icon"/>
                                 </button>
                                 <div className="collapse navbar-collapse" id="navbarNav">
-                                    <ul className="navbar-nav offset-md-8">
+                                    <ul className="navbar-nav offset-md-9">
                                         <li className="nav-item">
                                             <Link to="/" className="nav-item nav-link">Home</Link>
                                         </li>
@@ -64,21 +64,16 @@ class App extends React.Component {
                                 </div>
                             </nav>
                         }
-                        <div className="jumbotron">
-                            <div className="container">
-                                <div className="row">
-                                    <div className="col-md-12">
-                                        <PrivateRoute exact path="/" component={HomePage} />
-                                        <PrivateRoute exact path="/Kids" component={KidsPage} />
-                                        <Route path="/login" component={LoginPage} />
-                                        <Route path="/register" component={RegisterPage} />
-                                        <Route path="/editUser" component={EditUserPage} />
-                                        <Route path="/editProfile" component = {EditProfilePage}/>
-                                    </div>
-                                </div>
+                            <div className="jumbotron">
+                                <PrivateRoute exact path="/" component={HomePage} />
+                                <PrivateRoute exact path="/Kids" component={KidsPage} />
+                                <Route path="/login" component={LoginPage} />
+                                <Route path="/register" component={RegisterPage} />
+                                <Route path="/editUser" component={EditUserPage} />
+                                <Route path="/editProfile" component = {EditProfilePage}/>
                             </div>
-                        </div>
                     </div>
+                     
                 </Router>
             );
         }
@@ -87,15 +82,15 @@ class App extends React.Component {
                 <Router history={history}>
                     <div>
                         {currentUser &&
-                            <nav className="navbar navbar-expand-lg navbar-dark bg-dark col-md-12">
-                                <a className="navbar-brand" href="/editProfile">
-                                    <img src={tree} width="10%" height="10%" alt=""/>
-                                </a>
-                                <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+                                <img src={tree} width="5%" height="5%" alt=""/>
+                                <button className="navbar-toggler" type="button" data-toggle="collapse" 
+                                    data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" 
+                                    aria-label="Toggle navigation">
                                     <span className="navbar-toggler-icon"></span>
                                 </button>
                                 <div className="collapse navbar-collapse" id="navbarNav">
-                                    <ul className="navbar-nav offset-md-8">
+                                    <ul className="navbar-nav offset-md-9">
                                         <li className="nav-item">
                                             <Link to="/" className="nav-item nav-link">Home</Link>
                                         </li>
@@ -110,17 +105,10 @@ class App extends React.Component {
                             </nav>
                         }
                         <div className="jumbotron">
-                            <div className="container">
-                                <div className="row">
-                                    <div className="col-md-12">
-                                        <PrivateRoute exact path="/" component={HomePage} />
-                                        <Route path="/login" component={LoginPage} />
-                                        <Route path="/register" component={RegisterPage} />
-                                        <Route path="/editProfile" component={EditProfilePage}/>
-                                            
-                                    </div>
-                                </div>
-                            </div>
+                            <PrivateRoute exact path="/" component={HomePage} />
+                            <Route path="/login" component={LoginPage} />
+                            <Route path="/register" component={RegisterPage} />
+                            <Route path="/editProfile" component={EditProfilePage}/>
                         </div>
                     </div>
                 </Router>
