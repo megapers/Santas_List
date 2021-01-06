@@ -181,14 +181,14 @@ class RegisterPage extends Component {
               variant ="outlined"
             />
             <br/>
-          <Button
-            color="primary"
-            variant="contained"
-            type="submit"
-            disabled={submitted}
-            >
-            Register
-          </Button>
+            <Button
+              color="primary"
+              variant="contained"
+              type="submit"
+              disabled={submitted}
+              >
+              Register
+            </Button>
           </ValidatorForm>
           <Link to="/login" className="nav-link">Cancel</Link>
         </div>
