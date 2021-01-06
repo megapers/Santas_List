@@ -32,6 +32,7 @@ class RegisterPage extends Component {
   }
 
   handleSubmit = () => {
+    console.log('TEST');
     const kid = this.state.formData;
     kid.Latitude = parseFloat(kid.Latitude);
     kid.Longitude = parseFloat(kid.Longitude);
@@ -180,15 +181,15 @@ class RegisterPage extends Component {
               variant ="outlined"
             />
             <br/>
-          </ValidatorForm>
           <Button
             color="primary"
             variant="contained"
             type="submit"
             disabled={submitted}
-          >
+            >
             Register
           </Button>
+          </ValidatorForm>
           <Link to="/login" className="nav-link">Cancel</Link>
         </div>
       </div>
